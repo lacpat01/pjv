@@ -1,0 +1,100 @@
+﻿@model groupePjvApp.ViewModels.CommandesViewModel
+@using groupePjvApp.Models
+@using System.Web.WebPages.Html
+@{
+    var magasins = ViewData["magasins"] != null ? ViewData["magasins"] as List<Magasin> : new List<Magasin>();
+    var produits = ViewData["produits"] != null ? ViewData["produits"] as List<Produit> : new List<Produit>();
+}
+<!doctype html>
+<html>
+@Html.Partial("../Shared/head")
+</head>
+<body>
+   @Html.Partial("../Shared/menu")
+
+
+    <div class="container-fluid">
+        <div class="col-sm-8">
+            @Html.ValidationSummary()
+        </div>
+        <div class="col-sm-9">
+            
+            <div class="col-sm-12 space-empty"></div>
+            <div class="col-sm-11 col-sm-offset-1"><h1 class="fw6">Commander</h1></div>
+            <div class="col-sm-11 col-sm-offset-1"><p>Veuillez inscrire le numéro du produit ainsi que le nombre désiré</p></div>
+            
+
+
+            <div class="col-sm-12 space-empty"></div>
+            <div class="col-sm-11 col-sm-offset-1">
+
+                
+
+                @using (Html.BeginForm("ConfirmerCommande", "Commande", FormMethod.Post))
+            {
+                    
+
+                    <div class="col-sm-12 space-empty"></div>
+
+                    <div class="col-sm-6">
+                        
+                        @Html.DropDownListFor(x => x.Commande.Magasin.Id, new System.Web.Mvc.SelectList(magasins, "Id", "Succursale"), "Choisir une succursale...", new { @class = "minimal" })
+                        
+            
+                    </div>
+                    
+                    using (Html.BeginCollectionItem("NewBooks"))
+                    {
+                        <dl class="dl-horizontal" id="produits">
+                            @foreach (var produit in @Model.Commande.ProduitsCommande)
+                            {
+                                @Html.DisplayFor(model => produit);
+                            }
+                        </dl>
+                    }
+
+
+    <button class="btn btnBottom btn-lg btnRouge btn-responsive" type="submit" name="btn-login">Commander</button>
+            }
+
+                    <div class="col-sm-12">
+                        <img id="ajouter" src="~/Content/img/add-button-inside-black-circle.svg" width="36px">
+                        Ajouter un type de luminaire
+                    </div>
+
+</div>
+        </div>
+       
+</div>
+    <script>
+        $(document).ready(function () {            
+            $("#ajouter").click(function () {
+                $.ajax({
+                            async: false,
+                            url: '/Commande/CreateNewBook'
+                        }).success(function (partialView) {
+
+                            $('#produits').append(partialView);
+
+                        });
+            });
+
+
+
+            //$("#addbook").on('click', function () {
+            //    alert('test');
+            //    $.ajax({
+            //        async: false,
+            //        url: '/Commande/CreateNewBook'
+            //    }).success(function (partialView) {
+
+            //        $('#booksContainer').append(partialView);
+
+            //    });
+            //});
+
+        });
+    </script>
+        </body>
+        </html>
+

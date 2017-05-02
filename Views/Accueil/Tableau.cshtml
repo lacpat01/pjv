@@ -1,0 +1,125 @@
+﻿
+ <!doctype html>
+<html>
+@Html.Partial("../Shared/head")
+
+</head>
+@Html.Partial("../Shared/menu")
+<body>
+    <div class="container-fluid">
+        <div class="col-lg-9 hidden-md hidden-sm hidden-xs">
+            <div class="col-lg-12 space-empty"></div>
+            <div class="col-lg-11 col-lg-offset-1"><h1 class="fw6">Tableau de bord</h1></div>
+            <div class="col-lg-11 col-lg-offset-1"><p class="textGrisPale fw6">Choissisez une action à effectuer</p></div>
+
+            <div class="col-lg-12 space-empty"></div>
+            <div class="col-lg-11 col-lg-offset-1">
+                <a href="@Url.Action("Liste", "Accueil")"><div class="col-lg-3 dashboardIconContainer"><div class="col-lg-2 valign"><img class="mt3 iconAlign mb2" src="~/Content/icons/magasinNoir.svg" width="85px"></div><div class="col-lg-12"></div><p class="col-lg-12 text-center dashboardTitleTextCards fw4 fs24">Liste des magasins</p><p class="col-lg-12 text-center dashboardSubTitleTextCards">Visionez la liste complète des magasins</p></div></a>
+
+                <a href="@Url.Action("Produits", "Produits")"><div class="col-lg-3 dashboardIconContainer dashboardIconSpaceContainer"><div class="col-lg-2 valign"><img class="mt3 iconAlign mb2" src="~/Content/icons/produitNoir.svg" width="85px"></div><div class="col-lg-12"></div><p class="col-lg-12 text-center dashboardTitleTextCards fw4 fs24">Produits</p><p class="col-lg-12 text-center dashboardSubTitleTextCards">Visionez la liste complète des produits et leurs fiches techniques</p></div></a>
+
+                <a href="@Url.Action("InfosVisite", "Visite")"><div class="col-lg-3 dashboardIconContainer dashboardIconSpaceContainer"><div class="col-lg-2 valign"><img class="mt3 iconAlign mb2" src="~/Content/icons/visiteNoir.svg" width="85px"></div><div class="col-lg-12"></div><p class="col-lg-12 text-center dashboardTitleTextCards fw4 fs24">Visite de magasin</p><p class="col-lg-12 text-center dashboardSubTitleTextCards">Compiler les informations de chaque visite de magasin</p></div></a>
+
+                <div class="col-lg-12 space-empty"></div>
+
+                <a href="@Url.Action("Commandes", "Commande")"><div class="col-lg-3 dashboardIconContainer"><div class="col-lg-2 valign"><img class="mt3 iconAlign mb2" src="~/Content/icons/commandeNoir.svg" width="85px"></div><div class="col-lg-12"></div><p class="col-lg-12 text-center dashboardTitleTextCards fw4 fs24">Commander</p><p class="col-lg-12 text-center dashboardSubTitleTextCards">Effectuer une commande d'un produit spécifique</p></div></a>
+
+
+                <a href="@Url.Action("Appel", "Accueil")"><div class="col-lg-3 dashboardIconContainer dashboardIconSpaceContainer"><div class="col-lg-2 valign"><img class="mt3 iconAlign mb2" src="~/Content/icons/appelNoir.svg" width="85px"></div><div class="col-lg-12"></div><p class="col-lg-12 text-center dashboardTitleTextCards fw4 fs24">Appel reçu</p><p class="col-lg-12 text-center dashboardSubTitleTextCards">Visionez et compilez les appel reçus</p></div></a>
+
+                <a href="@Url.Action("Support", "Accueil")"><div class="col-lg-3 dashboardIconContainer dashboardIconSpaceContainer"><div class="col-lg-2 valign"><img class="mt3 iconAlign mb2" src="~/Content/icons/supportNoir.svg" width="85px"></div><div class="col-lg-12"></div><p class="col-lg-12 text-center dashboardTitleTextCards fw4 fs24">Support</p><p class="col-lg-12 text-center dashboardSubTitleTextCards">Obtenez un support personnalisé à vos besoins</p></div></a>
+
+
+            </div>
+
+
+        </div>
+
+        <!-- responsive md -->
+        <div class="col-md-12 hidden-sm hidden-xs hidden-lg hidden-xl">
+            <div class="col-md-12 space-empty"></div>
+            <div class="col-md-11 col-md-offset-1"><h1 class="fw6">Tableau de bord</h1></div>
+            <div class="col-md-11 col-md-offset-1"><p class="textGrisPale fw6">Choissisez une action à effectuer</p></div>
+
+            <div class="col-md-12 space-empty"></div>
+
+            <div class="col-md-11 col-md-offset-1">
+                <a href="@Url.Action("Liste", "Accueil")"><div class="col-md-5 dashboardIconContainerSM"><div class="col-md-6 text-center col-md-offset-3"><img class="mt3 mb2" src="~/Content/icons/magasinNoir.svg" width="85px"></div><div class="col-md-12"></div><p class="col-md-12 text-center dashboardTitleTextCards fw4 fs24">Liste des magasins</p><p class="col-md-12 text-center dashboardSubTitleTextCards pb3">Visionez la liste complète des magasins</p></div></a>
+
+                <a href="@Url.Action("Produit", "Produits")"><div class="col-md-5 dashboardIconContainerSM dashboardIconSpaceContainer"><div class="col-md-6 text-center col-md-offset-3"><img class="mt3 mb2" src="~/Content/icons/produitNoir.svg" width="85px"></div><div class="col-md-12"></div><p class="col-md-12 text-center dashboardTitleTextCards fw4 fs24">Produits</p><p class="col-md-12 text-center dashboardSubTitleTextCards pb1">Visionez la liste complète des produits et leurs fiches techniques</p></div></a>
+            </div>
+
+            <div class="col-md-12 space-empty"></div>
+
+            <div class="col-md-11 col-md-offset-1">
+                <a href="@Url.Action("InfosVisite", "Visite")"><div class="col-md-5 dashboardIconContainerSM"><div class="col-md-6 text-center col-md-offset-3"><img class="mt3 mb2" src="~/Content/icons/visiteNoir.svg" width="85px"></div><div class="col-md-12"></div><p class="col-md-12 text-center dashboardTitleTextCards fw4 fs24">Visite de magasin</p><p class="col-md-12 text-center dashboardSubTitleTextCards pb3">Compiler les informations de chaque visite de magasin</p></div></a>
+
+                <a href="@Url.Action("Commande", "Commandes")"><div class="col-md-5 dashboardIconContainerSM dashboardIconSpaceContainer"><div class="col-md-6 text-center col-md-offset-3"><img class="mt3 mb2" src="~/Content/icons/commandeNoir.svg" width="85px"></div><div class="col-md-12"></div><p class="col-md-12 text-center dashboardTitleTextCards fw4 fs24">Commander</p><p class="col-md-12 text-center dashboardSubTitleTextCards pb3">Effectuer une commande d'un produit spécifique</p></div></a>
+            </div>
+
+            <div class="col-md-12 space-empty"></div>
+
+            <div class="col-md-11 col-md-offset-1">
+                <a href="@Url.Action("Appel", "Accueil")"><div class="col-md-5 dashboardIconContainerSM"><div class="col-md-6 text-center col-md-offset-3"><img class="mt3 mb2" src="~/Content/icons/appelNoir.svg" width="85px"></div><div class="col-md-12"></div><p class="col-md-12 text-center dashboardTitleTextCards fw4 fs24">Appel reçu</p><p class="col-md-12 text-center dashboardSubTitleTextCards pb3">Visionez et compilez les appel reçus</p></div></a>
+
+                <a href="@Url.Action("Support", "Accueil")"><div class="col-md-5 dashboardIconContainerSM dashboardIconSpaceContainer"><div class="col-md-6 text-center col-md-offset-3"><img class="mt3 mb2" src="~/Content/icons/supportNoir.svg" width="85px"></div><div class="col-md-12"></div><p class="col-md-12 text-center dashboardTitleTextCards fw4 fs24">Support</p><p class="col-md-12 text-center dashboardSubTitleTextCards pb3">Obtenez un support personnalisé à vos besoins</p></div></a>
+            </div>
+
+            <div class="col-md-12 space-empty"></div>
+            <div class="col-md-12 space-empty"></div>
+
+        </div>
+
+
+    </div>
+    <!-- End responsive md -->
+    <!-- responsive sm -->
+    <div class="col-sm-12 text-center hidden-md hidden-lg hidden-xl">
+        <div class="col-sm-12 space-empty"></div>
+        <div class="col-sm-12"><h1 class="fw6">Tableau de bord</h1></div>
+        <div class="col-sm-12"><p class="textGrisPale fw6">Choissisez une action à effectuer</p></div>
+
+        <div class="col-sm-12 space-empty"></div>
+
+        <div class="col-sm-12">
+            <a href="@Url.Action("Liste", "Accueil")"><div class="col-sm-12 dashboardIconContainerSM"><div class="col-md-2 text-center"><img class="mt3 mb2" src="~/Content/icons/magasinNoir.svg" width="85px"></div><div class="col-sm-12"></div><p class="col-sm-12 text-center dashboardTitleTextCards fw4 fs24">Liste des magasins</p><p class="col-sm-12 text-center dashboardSubTitleTextCards pb3">Visionez la liste complète des magasins</p></div></a>
+        </div>
+
+        <div class="col-sm-12 space-empty"></div>
+
+
+        <div class="col-sm-12">
+            <a href="@Url.Action("Produit", "Produits")"><div class="col-sm-12 dashboardIconContainerSM"><div class="col-md-2 text-center"><img class="mt3 mb2" src="~/Content/icons/produitNoir.svg" width="85px"></div><div class="col-sm-12"></div><p class="col-sm-12 text-center dashboardTitleTextCards fw4 fs24">Produits</p><p class="col-sm-12 text-center dashboardSubTitleTextCards pb3">Visionez la liste complète des produits et leurs fiches techniques</p></div></a>
+        </div>
+
+        <div class="col-sm-12 space-empty"></div>
+
+        <div class="col-sm-12">
+            <a href="@Url.Action("InfosVisite", "Visite")"><div class="col-sm-12 dashboardIconContainerSM"><div class="col-md-2 text-center"><img class="mt3 mb2" src="~/Content/icons/visiteNoir.svg" width="85px"></div><div class="col-sm-12"></div><p class="col-sm-12 text-center dashboardTitleTextCards fw4 fs24">Visite de magasin</p><p class="col-sm-12 text-center dashboardSubTitleTextCards pb3">Compiler les informations de chaque visite de magasin</p></div></a>
+        </div>
+
+        <div class="col-sm-12 space-empty"></div>
+
+        <div class="col-sm-12">
+            <a href="@Url.Action("Commande", "Commandes")"><div class="col-sm-12 dashboardIconContainerSM"><div class="col-md-2 text-center"><img class="mt3 mb2" src="~/Content/icons/commandeNoir.svg" width="85px"></div><div class="col-sm-12"></div><p class="col-sm-12 text-center dashboardTitleTextCards fw4 fs24">Commander</p><p class="col-sm-12 text-center dashboardSubTitleTextCards pb3">Effectuer une commande d'un produit spécifique</p></div></a>
+        </div>
+
+        <div class="col-sm-12 space-empty"></div>
+
+        <div class="col-sm-12">
+            <a href="@Url.Action("Appel", "Accueil")"><div class="col-sm-12 dashboardIconContainerSM"><div class="col-md-2 text-center"><img class="mt3 mb2" src="~/Content/icons/appelNoir.svg" width="85px"></div><div class="col-sm-12"></div><p class="col-sm-12 text-center dashboardTitleTextCards fw4 fs24">Appel reçu</p><p class="col-sm-12 text-center dashboardSubTitleTextCards pb3">Visionez et compilez les appel reçus</p></div></a>
+        </div>
+
+        <div class="col-sm-12 space-empty"></div>
+
+        <div class="col-sm-12">
+            <a href="@Url.Action("Support", "Accueil")"><div class="col-sm-12 dashboardIconContainerSM"><div class="col-md-2 text-center"><img class="mt3 mb2" src="~/Content/icons/supportNoir.svg" width="85px"></div><div class="col-sm-12"></div><p class="col-sm-12 text-center dashboardTitleTextCards fw4 fs24">Support</p><p class="col-sm-12 text-center dashboardSubTitleTextCards pb3">Obtenez un support personnalisé à vos besoins</p></div></a>
+        </div>
+
+        <div class="col-sm-12 space-empty"></div>
+        <div class="col-sm-12 space-empty"></div>
+
+    </div>
+    
+</body>     
+</html>

@@ -1,0 +1,22 @@
+﻿using groupePjvApp.Models;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Web;
+
+namespace groupePjvApp.ViewModels
+{
+    public class AppelViewModel
+    {
+        //public List<Magasin> Magasins { get; set; }
+        public int Magasin { get; set; }
+        //public Representant Representant { get; set; }
+        public int Representant { get; set; }
+
+        public DateTime DateAppel { get; set; }
+        public string NomAppelant { get; set; }
+        public string NotesAppel { get; set; }
+        public string Departement { get; set; }
+    }
+}

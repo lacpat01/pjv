@@ -1,0 +1,118 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+@Html.Partial("../Shared/head")
+</head>
+<body>
+    @Html.Partial("../Shared/menu")
+    <div class="container-fluid">
+        <div class="col-sm-9">
+            <div class="col-sm-12 space-empty"></div>
+            <div class="col-sm-11 col-sm-offset-1"><h1 class="fw6">Visite de magasin</h1></div>
+            <div class="col-sm-11 col-sm-offset-1"><p>Remplissez les champs ci-dessous pour générer un rapport de votre visite de magasin</p></div>
+
+            <!-- Timeline -->
+
+            <div class="col-sm-11 col-sm-offset-1">
+                <ul class="timeline" id="timeline">
+                    <li class="li complete col-sm-2">
+
+                        <div class="status">
+
+                        </div>
+                    </li>
+                    <li class="li complete">
+
+                        <div class="status col-sm-2">
+
+                        </div>
+                    </li>
+                    <li class="li complete">
+
+                        <div class="status col-sm-2">
+
+                        </div>
+                    </li>
+                    <li class="li complete">
+
+                        <div class="status col-sm-2">
+
+                        </div>
+                    </li>
+                    <li class="li">
+
+                        <div class="status col-sm-2">
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- End Timeline -->
+
+            <div class="col-sm-11 col-sm-offset-1"><h1>Étape 4 - Données luxmètre</h1></div>
+            <div class="col-sm-11 col-sm-offset-1"><p>Veuillez inscrire les données de votre LUXMÈTRE aux endroits indiqués.</p></div>
+
+
+            <div class="col-sm-12 space-empty"></div>
+
+
+            <div class="col-sm-11 col-sm-offset-1">
+
+                <div class="col-sm-12">
+
+                    <div class="col-sm-2 dashboardIconContainer">
+                        <div class="col-sm-12 space-empty-small"></div><div class="col-sm-2 mt2 icons"><img src="~/Content/icons/caisseNoir.svg" width="100px"></div><div class="col-sm-12 space-empty-small"></div><p class="col-sm-12 text-center dashboardTitleTextCards">Caisse</p>
+                    </div>
+
+                    <div class="col-sm-2 dashboardIconContainer dashboardIconSpaceContainer">
+                        <div class="col-sm-12 space-empty-small"></div><div class="col-sm-2 mt2 icons"><img src="~/Content/icons/bureauNoir.svg" width="100px"></div><div class="col-sm-12 space-empty-small"></div><p class="col-sm-12 text-center dashboardTitleTextCards">Bureau</p>
+                    </div>
+
+                    <div class="col-sm-2 dashboardIconContainer dashboardIconSpaceContainer">
+                        <div class="col-sm-12 space-empty-small"></div><div class="col-sm-2 mt2 icons"><img src="~/Content/icons/alleeNoir.svg" width="100px"></div><div class="col-sm-12 space-empty-small"></div><p class="col-sm-12 text-center dashboardTitleTextCards">Allée</p>
+                    </div>
+
+                    <div class="col-sm-2 dashboardIconContainer dashboardIconSpaceContainer">
+                        <div class="col-sm-12 space-empty-small"></div><div class="col-sm-2 mt2 icons"><img src="~/Content/icons/toiletteNoir.svg" width="100px"></div><div class="col-sm-12 space-empty-small"></div><p class="col-sm-12 text-center dashboardTitleTextCards">Salle de bain</p>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="col-sm-12 space-empty-small"></div>
+                    <div class="col-sm-2 dashboardIconLux dashboardIconSpaceContainer">
+                        <span class="text-center">Lux: <input type="number" name="Donnée luxmètre" placeholder="1"></span>
+                    </div>
+
+
+                    <div class="col-sm-2 dashboardIconLux dashboardIconSpaceContainer">
+                        <span class="text-center pl1">Lux: <input type="number" name="Donnée luxmètre" placeholder="1"></span>
+                    </div>
+
+
+                    <div class="col-sm-2 dashboardIconLux dashboardIconSpaceContainer">
+                        <span class="text-center pl1">Lux: <input type="number" name="Donnée luxmètre" placeholder="1"></span>
+                    </div>
+
+
+                    <div class="col-sm-2 dashboardIconLux dashboardIconSpaceContainer">
+                        <span class="text-center pl1">Lux: <input type="number" name="Donnée luxmètre" placeholder="1"></span>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="col-sm-12 space-empty"></div>
+            <div class="col-sm-11 col-sm-offset-1">
+                <div class="col-sm-9">
+                    <br>
+                    <a href="@Url.Action("VisiteEtape5", "Visite")"><button class="btn btnBottom btn-lg btnRouge btn-responsive" type="submit" name="btn-login">Prochaine étape</button></a><br>
+                </div> <!-- End col-md-12 bouton-->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

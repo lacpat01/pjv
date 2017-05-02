@@ -1,0 +1,9 @@
+﻿@model groupePjvApp.Models.Magasin
+@{
+    var magasins = ViewData["magasins"] != null ? ViewData["magasins"] as List<Magasin> : new List<Magasin>();    
+}
+
+<div id="newBooks">
+    @Html.DropDownListFor(x => x.Id, new System.Web.Mvc.SelectList(magasins, "Id", "Succursale"), "Choisir une succursale...", new { @class = "minimal" })
+
+</div>

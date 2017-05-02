@@ -1,0 +1,83 @@
+﻿
+<!doctype html>
+<html>
+@Html.Partial("../Shared/head")
+
+</head>
+
+<body>
+    @Html.Partial("../Shared/menu")
+
+
+    <div class="container-fluid">
+        <div class="col-sm-9">
+            <div class="col-sm-12 space-empty"></div>
+            <div class="col-sm-11 col-sm-offset-1"><h1 class="fw6">Produits</h1></div>
+            <div class="col-sm-11 col-sm-offset-1"><p>Visionnez la liste complète des produits à jour en date du 30 mars 2017</p></div>
+            <div class="col-sm-6 right">
+                <button class="btn buttonTop btn-md btnRouge btn-responsive dashboardIconSpaceContainer btnFilter">Tous les produits</button>
+                <button class="btn buttonTop btn-md btnOutlineRouge btn-responsive dashboardIconSpaceContainer btnFilter">Nouveau</button>
+                <button class="btn buttonTop btn-md btnOutlineRouge btn-responsive dashboardIconSpaceContainer btnFilter">Liquidation</button>
+                <button class="btn buttonTop btn-md btnOutlineVert btn-responsive dashboardIconSpaceContainer btnFilter">Listé BMR</button>
+            </div>
+            <div class="col-sm-12 space-empty"></div>
+
+            <div class="col-sm-11 col-sm-offset-1">
+
+
+                <div class="col-sm-3 dashboardProductCardContainer" data-filter=".Nouveau">
+                    <p class="col-sm-12"></p>
+                    <p class="col-sm-12 dashboardTitleTextCards">Ampoule DEL A21 <button class="right btn buttonTop btn-md btnRouge btn-responsive dashboardIconSpaceContainer">Nouveau</button></p>
+                    <p class="col-sm-12 dashboardSubTitleTextCards">PJV-A21</p>
+                    <a href="@Url.Action("FicheProduit", "Produits")">
+                        <img src="~/Content/img/corner.jpg" class="col-sm-12">
+                    </a>
+                    <p class="col-sm-6 dashboardSubTitleTextCards mt1">
+                        <img src="~/Content/img/bmr.png" width="32px"> 123-4567
+                    </p>
+                    <p class="col-sm-5 col-sm-offset-1">
+                        <img src="~/Content/icons/modifierRouge.svg" width="32px">
+                        <img class="ml1" src="~/Content/icons/pdfNoir.svg" width="32px">
+                    </p>
+                </div>
+
+
+
+
+                <div class="col-sm-3 dashboardProductCardContainer dashboardIconSpaceContainer" data-filter=".Liquidation">
+                    <p class="col-sm-12"></p>
+                    <p class="col-sm-12 dashboardTitleTextCards">Ampoule DEL A21 <button class="right btn buttonTop btn-md btnRouge btn-responsive dashboardIconSpaceContainer">Liquidation</button></p>
+                    <p class="col-sm-12 dashboardSubTitleTextCards">PJV-A21</p>
+                    <a href="@Url.Action("FicheProduit", "Produits")">
+                        <img src="~/Content/img/corner.jpg" class="col-sm-12">
+                    </a>
+                    <p class="col-sm-6 dashboardSubTitleTextCards mt1">
+                        <img src="~/Content/img/bmr.png" width="32px"> 123-4567
+                    </p>
+                    <p class="col-sm-5 col-sm-offset-1">
+                        <img src="~/Content/icons/modifierRouge.svg" width="32px">
+                        <img class="ml1" src="~/Content/icons/pdfNoir.svg" width="32px">
+                    </p>
+                </div>
+                <div class="col-sm-3 dashboardProductCardContainer dashboardIconSpaceContainer" data-filter=".ListeBMR">
+                    <p class="col-sm-12"></p>
+                    <p class="col-sm-12 dashboardTitleTextCards">Ampoule DEL A21 <button class="right btn buttonTop btn-md btnVert btn-responsive dashboardIconSpaceContainer">Listé BMR</button></p>
+                    <p class="col-sm-12 dashboardSubTitleTextCards">PJV-A21</p>
+                    <a href="@Url.Action("FicheProduit", "Produits")">
+                        <img src="~/Content/img/corner.jpg" class="col-sm-12">
+                    </a>
+                    <p class="col-sm-6 dashboardSubTitleTextCards mt1">
+                        <img src="~/Content/img/bmr.png" width="32px"> 123-4567
+                    </p>
+                    <p class="col-sm-5 col-sm-offset-1">
+                        <img src="~/Content/icons/modifierRouge.svg" width="32px">
+                        <img class="ml1" src="~/Content/icons/pdfNoir.svg" width="32px">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 space-empty"></div>  
+     
+</body>
+</html>

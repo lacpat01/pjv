@@ -1,0 +1,31 @@
+﻿<h2>Gift List</h2>
+What do you want for your birthday?
+
+ @{
+     using(Html.BeginForm()) {
+        <div id="editorRows">
+            @foreach (var item in Model)
+            {
+                @Html.Partial("GiftEditorRow", item);
+            }
+            
+           
+        </div>
+        @Html.ActionLink("Add another...", "BlankEditorRow", null, new { id = "addItem" })
+        <input type="submit" value="Finished" />
+         } 
+ }
+
+<script>
+        $( document ).ready(function() {
+            $("#addItem").click(function () {
+                $.ajax({
+                    url: this.href,
+                    cache: false,
+                    success: function (html) { $("#editorRows").append(html); }
+                });
+                return false;
+            });
+
+        });
+</script>

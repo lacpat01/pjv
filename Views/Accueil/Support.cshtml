@@ -1,0 +1,61 @@
+﻿@model groupePjvApp.ViewModels.MessagesViewModel
+<!DOCTYPE html>
+<html>
+@Html.Partial("../Shared/head")
+</head>
+<body>
+    @Html.Partial("../Shared/menu")
+
+    <div class="container-fluid">
+       
+        <div class="col-sm-8">
+            
+                
+                    @Html.ValidationSummary()
+                
+            
+                @if (Model != null)
+                {
+                    if (Model.Messages != null)
+                    {
+                        <div class='col-sm-11 col-sm-offset-1 alert alert-success'>
+                            <ul>
+                                @foreach(string message in Model.Messages)
+                                {
+                                    <li>@message</li>
+                                }
+                            </ul>
+                        </div>
+                    }
+                }
+                        
+            <div class="col-sm-11 col-sm-offset-1"><h1 class="fw6">Support</h1></div>
+            <div class="col-sm-11 col-sm-offset-1"><p>Pour toutes questions ou problèmes, contactez-nous sans tarder!</p></div>
+            
+            <div class="col-sm-12 space-empty"></div>
+            <div class="col-sm-11 col-sm-offset-1"><p>Support téléphonique</p></div>
+            <div class="col-sm-11 col-sm-offset-1"><img src="~/Content/icons/supportNoir.svg" width="40px"><span class="fw7 h1 fs24 red"> 1-844-310-5758</span></div>
+            <div class="col-sm-12 space-empty"></div>
+            @using (Html.BeginForm("Contacter", "Accueil", FormMethod.Post))
+            {
+                <div class="col-sm-11 col-sm-offset-1">
+                    <div class="col-sm-12">
+                        <p>Support en ligne</p>
+                        <div class="col-sm-9">
+                            <textarea name="txtMessageSupport" id="txtMessageSupport" class="form-control" rows="10" name="comments" placeholder="Message"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 space-empty"></div>
+                </div>
+                <div class="col-sm-12 space-empty"></div>
+                <div class="col-sm-11 col-sm-offset-1">
+                    <div class="col-sm-9">
+                        <br>
+                        <a href="#"><button class="btn btnBottom btn-lg btnRouge btn-responsive" type="submit" name="btn-login">Envoyer le message</button></a><br>
+                    </div> <!-- End col-md-12 bouton-->
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>

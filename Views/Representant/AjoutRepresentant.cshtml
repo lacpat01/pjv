@@ -1,0 +1,327 @@
+﻿@model groupePjvApp.ViewModels.RepresentantViewModel
+
+<!DOCTYPE html>
+<html>
+@Html.Partial("../Shared/head")
+</head>
+<body>
+    <header>
+@Html.Partial("../Shared/menu")
+     @using (Html.BeginForm("AjoutRepresentant", "Representant", FormMethod.Post, new {enctype = "multipart/form-data" }))
+     {
+        <div class="container-fluid">
+            <div class="col-lg-9 hidden-md hidden-sm hidden-xs">
+                <div class="col-lg-12 space-empty"></div>
+                <div class="col-lg-11 col-lg-offset-1"><h1 class="fw6">Ajouter un représentant</h1></div>
+                <div class="col-lg-11 col-lg-offset-1"><p>Entrer les informations suivantes.</p></div>
+
+
+
+                <div class="col-lg-11 col-lg-offset-1">
+
+                    <div class="col-lg-12">
+                        <div class="col-lg-4">
+                            <p class="textGrisFoncee">Prénom</p>
+                            @Html.TextBoxFor(m => m.Representant.Prenom, new { @class = "inputVisite", type = "text", placeholder = "Ex: Pierre" })
+                            <div class="col-lg-12 space-empty"></div>
+
+                        </div>
+
+                        <div class="col-lg-4">
+                            <p class="textGrisFoncee">Nom</p>
+                            @Html.TextBoxFor(m => m.Representant.Nom, new { @class = "inputVisite", type = "text", placeholder = "Ex: Tremblay" })
+
+                            <div class="col-lg-12 space-empty"></div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="col-lg-4">
+                            <p class="textGrisFoncee">Courriel</p>
+                            @Html.TextBoxFor(m => m.Representant.Courriel, new { @class = "inputVisite", type = "text", placeholder = "Ex: pierreTremblay@groupePjv.com" })
+
+                            <div class="col-lg-12 space-empty"></div>
+
+                        </div>
+
+                        <div class="col-lg-4">
+                            <p class="textGrisFoncee">Mot de passe</p>
+                            @Html.TextBoxFor(m => m.Representant.MotDePasse, new { @class = "inputVisite", type = "text" })
+
+                            <div class="col-lg-12 space-empty"></div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="col-lg-4">
+                            <div class="col-lg-2 dashboardIconContainer">
+                                <input type="file" style="display:none;" name="file" id="file" class="inputfile" accept="image/*" />
+                                <label for="file"><div class="col-lg-12 space-empty-small"></div><div class="col-lg-2 mt2 icons"><img src="assets/icons/photoNoir.svg" width="100px"></div><div class="col-lg-12 space-empty-small"></div><p class="col-lg-12 text-center dashboardTitleTextCards fw4">Photo</p></label>
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-4">
+                            <img id="image" width="400px" />
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                </div>
+
+                <div class="col-lg-12 space-empty"></div>
+                <div class="col-lg-11 col-lg-offset-1">
+                    <div class="col-lg-9">
+                        <br>
+                        <a href="#"><button class="btn btnBottom btn-lg btnRouge btn-responsive" type="submit" name="btn-login">Sauvegarder</button></a><br>
+                    </div> <!-- End col-md-12 bouton-->
+                </div>
+
+                <div class="col-lg-12 space-empty"></div>
+
+            </div>
+
+            <!-- responsive md-->
+
+            <div class="col-md-12 visible-md hidden-lg hidden-xl hidden-sm hidden-xs">
+                <div class="col-md-12 space-empty"></div>
+                <div class="col-md-11 col-md-offset-1"><h1 class="fw6">Appel reçu</h1></div>
+                <div class="col-md-11 col-md-offset-1"><p>Entrer les informations suivantes.</p></div>
+
+
+                <div class="col-md-12 space-empty"></div>
+
+
+                <div class="col-md-11 col-md-offset-1">
+
+                    <div class="col-md-12">
+                        <div class="col-md-5">
+                            <p class="textGrisFoncee">
+                                Date :
+                                <script>
+                                    var tD = new Date();
+                                    var datestr = tD.getDate() + "/" + (tD.getMonth() + 1) + "/" + tD.getFullYear();
+                                    document.write("<input type='text' name='textField' value='" + datestr + "'>");
+                                </script>
+                            </p>
+                            <div class="col-md-12 space-empty"></div>
+                            <p class="textGrisFoncee">Nom de l'appelant</p>
+                            <input class="inputVisite" type="text" placeholder="Ex: Pierre" />
+
+                            <div class="col-md-12 space-empty"></div>
+
+
+                            <p class="textGrisFoncee">Sélectionnez un magasin</p>
+                            <form action="/.php">
+
+                                <select class="minimal">
+                                    <option value="Sélectionnez">Succursale</option>
+                                    <option value="A21">Québec</option>
+                                    <option value="Tri-Proof">Boucherville</option>
+                                    <option value="Plafond">Trois-Rivières</option>
+                                    <option value="Sentinelle">Sainte-Catherine</option>
+                                    <option value="A21">Beaupré</option>
+                                    <option value="Tri-Proof">Montréal</option>
+                                    <option value="Plafond">Gaspésie</option>
+                                    <option value="Sentinelle">Charlesbourg</option>
+                                </select>
+
+                            </form>
+                        </div>
+                        <div class="col-md-12 space-empty"></div>
+                        <div class="col-md-12">
+                            <div class="col-md-12 space-empty-small"></div>
+                            <p class="textGrisFoncee">Département</p>
+
+                            <div class="col-md-12">
+                                <div class="col-md-4 dashboardIconAppel pure-button pure-button-active">
+                                    <div class="col-md-12 mt2 valign"><img src="assets/icons/supportNoir.svg" width="50px"></div><div class="col-md-12 space-empty-small2"></div><p class="col-md-12 text-center dashboardTitleTextCards fw4">Support</p>
+                                </div>
+
+                                <div class="col-md-4 dashboardIconAppel ml1 pure-button pure-button-active">
+                                    <div class="col-md-12 mt2 valign"><img src="assets/icons/magasinNoir.svg" width="50px"></div><div class="col-md-12 space-empty-small2"></div><p class="col-md-12 text-center dashboardTitleTextCards fw4">Garantie</p>
+                                </div>
+
+                                <div class="col-md-4 dashboardIconAppel ml1 pure-button pure-button-active">
+                                    <div class="col-md-12 mt2 valign"><img src="assets/icons/produitNoir.svg" width="50px"></div><div class="col-md-12 space-empty-small2"></div><p class="col-md-12 text-center dashboardTitleTextCards fw4">Produit</p>
+                                </div>
+
+                                <div class="col-md-12 space-empty-small"></div>
+
+                                <div class="col-md-12">
+                                    <p class="textGrisFoncee">Autre :</p>
+                                    <input class="inputVisite" type="text" placeholder="Ex: Précisez..." />
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-md-12 space-empty"></div>
+                    <div class="col-md-12">
+                        <textarea class="form-control" rows="10" name="comments" placeholder="Notes de l’appel reçu"></textarea>
+                    </div>
+
+
+
+
+
+                </div>
+
+                <div class="col-md-12 space-empty"></div>
+                <div class="col-md-11 col-md-offset-1">
+                    <div class="col-md-9">
+                        <br>
+                        <a href="#"><button class="btn btnBottom btn-lg btnRouge btn-responsive" type="submit" name="btn-login">Envoyer le message</button></a><br>
+                    </div> <!-- End col-md-12 bouton-->
+                </div>
+
+                <div class="col-md-12 space-empty"></div>
+
+            </div>
+
+            <!-- End responsive md -->
+            <!-- responsive sm-->
+
+            <div class="col-sm-12 text-center visible-sm visible-xs hidden-md hidden-lg hidden-xl">
+                <div class="col-sm-12 space-empty"></div>
+                <div class="col-sm-12"><h1 class="fw6">Appel reçu</h1></div>
+                <div class="col-sm-12"><p>Entrer les informations suivantes.</p></div>
+
+
+                <div class="col-sm-12 space-empty"></div>
+
+
+                <div class="col-sm-12">
+
+                    <div class="col-sm-12">
+                        <div class="col-sm-12">
+                            <p class="textGrisFoncee">
+                                Date :
+                                <script>
+                                    var tD = new Date();
+                                    var datestr = tD.getDate() + "/" + (tD.getMonth() + 1) + "/" + tD.getFullYear();
+                                    document.write("<input type='text' name='textField' value='" + datestr + "'>");
+                                </script>
+                            </p>
+                            <div class="col-sm-12 space-empty"></div>
+                            <p class="textGrisFoncee">Nom de l'appelant</p>
+                            <input class="inputVisite" type="text" placeholder="Ex: Pierre" />
+
+                            <div class="col-sm-12 space-empty"></div>
+
+
+                            <p class="textGrisFoncee">Sélectionnez un magasin</p>
+                            <form action="/.php">
+
+                                <select class="minimal">
+                                    <option value="Sélectionnez">Succursale</option>
+                                    <option value="A21">Québec</option>
+                                    <option value="Tri-Proof">Boucherville</option>
+                                    <option value="Plafond">Trois-Rivières</option>
+                                    <option value="Sentinelle">Sainte-Catherine</option>
+                                    <option value="A21">Beaupré</option>
+                                    <option value="Tri-Proof">Montréal</option>
+                                    <option value="Plafond">Gaspésie</option>
+                                    <option value="Sentinelle">Charlesbourg</option>
+                                </select>
+
+                            </form>
+                        </div>
+                        <div class="col-sm-12 space-empty"></div>
+                        <div class="col-sm-12">
+                            <div class="col-sm-12 space-empty-small"></div>
+                            <p class="textGrisFoncee">Département</p>
+
+                            <div class="col-sm-12">
+                                <div class="col-sm-12 pt2 pb2 dashboardIconAppelSM pure-button pure-button-active">
+                                    <div class="col-sm-12 mt2 valign"><img src="assets/icons/supportNoir.svg" width="50px"></div><div class="col-sm-12 space-empty-small2"></div><p class="col-sm-12 text-center dashboardTitleTextCards fw4">Support</p>
+                                </div>
+
+
+                                <div class="col-sm-12 space-empty"></div>
+
+
+                                <div class="col-sm-12 pt2 pb2 dashboardIconAppelSM pure-button pure-button-active">
+                                    <div class="col-sm-12 mt2 valign"><img src="assets/icons/magasinNoir.svg" width="50px"></div><div class="col-sm-12 space-empty-small2"></div><p class="col-sm-12 text-center dashboardTitleTextCards fw4">Garantie</p>
+                                </div>
+
+
+                                <div class="col-sm-12 space-empty"></div>
+
+
+
+                                <div class="col-sm-12 pt2 pb2 dashboardIconAppelSM pure-button pure-button-active">
+                                    <div class="col-sm-12 mt2 valign"><img src="assets/icons/produitNoir.svg" width="50px"></div><div class="col-sm-12 space-empty-small2"></div><p class="col-sm-12 text-center dashboardTitleTextCards fw4">Produit</p>
+                                </div>
+
+
+
+                                <div class="col-sm-12 space-empty"></div>
+
+
+
+                                <div class="col-sm-12">
+                                    <p class="textGrisFoncee">Autre :</p>
+                                    <input class="inputVisite" type="text" placeholder="Ex: Précisez..." />
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+
+                        <div class="col-sm-12 space-empty"></div>
+                        <div class="col-sm-12">
+                            <textarea class="form-control" rows="10" name="comments" placeholder="Notes de l’appel reçu"></textarea>
+                        </div>
+
+
+
+
+
+                    </div>
+
+                    <div class="col-sm-12 space-empty"></div>
+                    <div class="col-sm-12">
+                        <div class="col-sm-12">
+                            <br>
+                            <a href="#"><button class="btn btnBottom btn-lg btnRouge btn-responsive" type="submit" name="btn-login">Envoyer le message</button></a><br>
+                        </div> <!-- End col-sm-12 bouton-->
+                    </div>
+
+                    <div class="col-sm-12 space-empty"></div>
+
+                </div>
+
+                <!-- End responsive sm -->
+            </div>
+        </div>
+     }
+    
+
+    <script>
+        document.getElementById("file").onchange = function () {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                // get loaded data and render thumbnail.
+                document.getElementById("image").src = e.target.result;
+            };
+
+            // read the image file as a data URL.
+            reader.readAsDataURL(this.files[0]);
+        };
+    </script>  
+</body>
+</html>

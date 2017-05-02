@@ -1,0 +1,149 @@
+﻿@model groupePjvApp.ViewModels.AppelViewModel
+@using groupePjvApp.Models
+
+@{
+    var magasins = ViewData["magasins"] != null ? ViewData["magasins"] as List<Magasin> : new List<Magasin>();
+    var produits = ViewData["produits"] != null ? ViewData["produits"] as List<Produit> : new List<Produit>();
+}
+<!DOCTYPE html>
+<html>
+<html>
+@Html.Partial("../Shared/head")
+
+</head>
+@Html.Partial("../Shared/menu")
+<body>
+   
+
+
+    <div class="container-fluid">
+@using (Html.BeginForm("Appel", "Accueil", FormMethod.Post))
+{
+    <div class="col-sm-9">
+        @Html.ValidationSummary()
+        @if (ViewData["messageSucces"] != null)
+        {
+            var liste = ViewData["messageSucces"] as List<string>;
+                <div class='col-sm-11 col-sm-offset-1 alert alert-success'>
+                    <ul>
+                       @foreach (string message in liste)
+                       {
+                        <li>@message</li>
+                       }
+                    </ul>
+                </div>
+            
+        }
+        
+        @if (ViewData["messageErreurs"] != null)
+        {
+            var liste = ViewData["messageErreurs"] as List<string>;
+            <div class='col-sm-11 col-sm-offset-1 alert alert-danger'>
+                <ul>
+                    @foreach (string message in liste)
+                    {
+                        <li>@message</li>
+                    }
+                </ul>
+            </div>
+
+        }
+
+        <div class="col-sm-12 space-empty"></div>
+        <div class="col-sm-11 col-sm-offset-1"><h1 class="fw6">Appel reçu</h1></div>
+        <div class="col-sm-11 col-sm-offset-1"><p>Entrer les informations suivantes.</p></div>
+
+
+        <div class="col-sm-12 space-empty"></div>
+
+
+        <div class="col-sm-11 col-sm-offset-1">
+
+            <div class="col-sm-12">
+                <div class="col-sm-5">
+                    <p class="textGrisFoncee">
+                        <div class="form-group input-group-sm">
+                            Date :
+                            @Html.TextBoxFor(m => m.DateAppel, DateTime.Now.ToShortDateString(), new { @class = " datepicker", placeholder = "Choisir une date..." })
+                            
+                        </div>                       
+                    </p>
+                    <div class="col-sm-12 space-empty"></div>
+                    <p class="textGrisFoncee">Nom de l'appelant</p>
+                    @Html.TextBoxFor(m => m.NomAppelant, new { @class = "inputVisite", type = "text", placeholder = "Ex: Pierre", name = "txtemail" })
+                    <div class="col-sm-12 space-empty"></div>
+
+
+                    <p class="textGrisFoncee">Sélectionnez un magasin</p>
+                    @Html.DropDownListFor(x => x.Magasin, new System.Web.Mvc.SelectList(magasins, "Id", "Succursale"), "Choisir une succursale...", new { @class = "minimal" })
+
+                </div>
+                <div class="col-sm-6 col-sm-offset-1">
+                    <div class="col-sm-12 space-empty-small2"></div>
+                    <p class="textGrisFoncee">Département</p>
+                    <div class="col-sm-12 space-empty"></div>
+                    <div class="col-sm-12">
+                        <div class="col-sm-4 dashboardIconAppel pure-button pure-button-active">
+                            <div class="col-sm-12 mt2 valign"><img src="~/Content/icons/supportNoir.svg" width="50px"></div><div class="col-sm-12 space-empty-small2"></div><p class="col-sm-12 text-center dashboardTitleTextCards fw4">Support</p>
+                        </div>
+
+                        <div class="col-sm-4 dashboardIconAppel ml1 pure-button pure-button-active">
+                            <div class="col-sm-12 mt2 valign"><img src="~/Content/icons/magasinNoir.svg" width="50px"></div><div class="col-sm-12 space-empty-small2"></div><p class="col-sm-12 text-center dashboardTitleTextCards fw4">Garantie</p>
+                        </div>
+
+                        <div class="col-sm-4 dashboardIconAppel ml1 pure-button pure-button-active">
+                            <div class="col-sm-12 mt2 valign"><img src="~/Content/icons/produitNoir.svg" width="50px"></div><div class="col-sm-12 space-empty-small2"></div><p class="col-sm-12 text-center dashboardTitleTextCards fw4">Produit</p>
+                        </div>
+
+                        <div class="col-sm-12 space-empty-small"></div>
+
+                        <div class="col-sm-12">
+                            <p class="textGrisFoncee">Autre :</p>
+                            @Html.TextBoxFor(m => m.Departement, new { @class = "inputVisite", type = "text", placeholder = "Ex: Précisez...", name = "txtemail" })
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="col-sm-12 space-empty"></div>
+            <div class="col-sm-9">
+                @Html.TextAreaFor(m => m.NotesAppel, new { rows = 10, columns = 40, @class = "form-control", placeholder = "Notes de l’appel reçu" })
+            </div>
+
+
+
+
+
+        </div>
+
+        <div class="col-sm-12 space-empty"></div>
+        <div class="col-sm-11 col-sm-offset-1">
+            <div class="col-sm-9">
+                <br>
+                <a href="#"><button class="btn btnBottom btn-lg btnRouge btn-responsive" type="submit" name="btn-Appel">Envoyer le message</button></a><br>
+            </div> <!-- End col-md-12 bouton-->
+        </div>
+
+        <div class="col-sm-12 space-empty"></div>
+
+    </div>
+}
+        
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(function () { // will trigger when the document is ready
+                $('.datepicker').datepicker(); //Initialise any date pickers
+            });
+        });
+    
+    </script>
+    <script src="action.js"></script>   
+</body>
+</html>

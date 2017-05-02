@@ -1,0 +1,138 @@
+﻿@model groupePjvApp.ViewModels.VisiteViewModel
+
+<!DOCTYPE html>
+<html>
+@Html.Partial("../Shared/head")
+</head>
+<body>
+    @Html.Partial("../Shared/menu")
+    <div class="container-fluid">
+        <div class="col-sm-9">
+            <div class="col-sm-12 space-empty"></div>
+            <div class="col-sm-11 col-sm-offset-1"><h1 class="fw6">Visite de magasin</h1></div>
+            <div class="col-sm-11 col-sm-offset-1"><p>Remplissez les champs ci-dessous pour générer un rapport de votre visite de magasin</p></div>
+
+            <!-- Timeline -->
+
+            <div class="col-sm-11 col-sm-offset-1">
+                <ul class="timeline" id="timeline">
+                    <li class="li complete col-sm-2">
+
+                        <div class="status">
+
+                        </div>
+                    </li>
+                    <li class="li complete">
+
+                        <div class="status col-sm-2">
+
+                        </div>
+                    </li>
+                    <li class="li complete">
+
+                        <div class="status col-sm-2">
+
+                        </div>
+                    </li>
+                    <li class="li complete">
+
+                        <div class="status col-sm-2">
+
+                        </div>
+                    </li>
+                    <li class="li complete">
+
+                        <div class="status col-sm-2">
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- End Timeline -->
+
+            <div class="col-sm-11 col-sm-offset-1"><h1>Étape 6 - Commande produit</h1></div>
+            <div class="col-sm-11 col-sm-offset-1"><p class="textGrisPale fw6">Si nécessaire, veuillez sélectionner les produits à commander pour ce magasin.</p></div>
+
+
+            <div class="col-sm-12 space-empty"></div>
+
+
+            <div class="col-sm-11 col-sm-offset-1">
+
+                <div class="col-sm-12">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default">
+                            <input type="radio" name="optradio1" id="res" value="Résidentiel" checked="">
+                            Résidentiel
+                        </label>
+
+                        <label class="btn btn-default active">
+                            <input type="radio" name="optradio1" id="optradio1" value="Commercial">
+                            Commercial
+                        </label>
+                    </div>
+                    <p class="textGrisPale fw6">Désirez-vous passer une commande pour ce magasin?</p>
+                    <button class="btn buttonTop btn-md btnOutlineRouge btn-responsive">Oui</button><button class="btn buttonTop btn-md btnRouge btn-responsive dashboardIconSpaceContainer">Non</button>
+                    <div class="col-sm-12 space-empty"></div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="col-sm-9">
+
+                        <form id="test" action="/.php">
+                            <div class="col-sm-6">
+                                <select class="minimal">
+                                    <option value="Sélectionnez">Sélectionnez un produit</option>
+                                    @foreach (var produit in Model.Produits)
+                                    {
+                                        <option value="@produit.Id">@produit.Code</option>
+                                    } 
+                                </select>
+                            </div>
+                            <div class="col-sm-6">
+                                QTÉ: <input type="number" name="Nombre de luminaire" placeholder="1">
+                            </div><br>
+
+                            <div class="col-sm-12 space-empty"></div>
+
+                            <div class="col-sm-6">
+                                <select class="minimal">
+                                    <option value="Sélectionnez">Sélectionnez un produit</option>
+                                    @foreach (var produit in Model.Produits)
+                                    {
+                                        <option value="@produit.Id">@produit.Code</option>
+                                    } 
+                                </select>
+                            </div>
+                            <div class="col-sm-6">
+                                QTÉ: <input type="number" name="Nombre de luminaire" placeholder="1">
+                            </div><br>
+
+                        </form>
+                        <div class="col-sm-12 space-empty"></div>
+                        <div class="col-sm-12">
+                            <img id="btnAdd" src="~/Content/img/add-button-inside-black-circle.svg" width="36px">
+                            Ajouter un produit
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="col-sm-12 space-empty"></div>
+            <div class="col-sm-11 col-sm-offset-1">
+                <div class="col-sm-9">
+                    <br>
+                    <a href="@Url.Action("VisiteEtape7", "Visite")"><button class="btn btnBottom btn-lg btnRouge btn-responsive" type="submit" name="btn-login">Prochaine étape</button></a><br>
+                </div> <!-- End col-md-12 bouton-->
+            </div>
+
+
+
+        </div>
+    </div>
+    
+</body>
+</html>

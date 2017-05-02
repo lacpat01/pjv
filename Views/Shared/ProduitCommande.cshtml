@@ -1,0 +1,13 @@
+﻿@using groupePjvApp.Models
+@model groupePjvApp.Models.ItemCommande
+
+@{
+    var produits = ViewData["produits"] != null ? ViewData["produits"] as List<Produit> : new List<Produit>();    
+}
+<div class="col-sm-12 space-empty"></div>
+
+<div class="col-sm-6">
+    @Html.DropDownListFor(x => x.IdProduit, new System.Web.Mvc.SelectList(produits, "Id", "Libelle"), "Choisir un produit...", new { @class = "minimal" })
+
+
+</div>

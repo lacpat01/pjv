@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Document sans nom</title>
+<link href="css/hamburger.css" rel="stylesheet">
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<body>
+<div>
+<header>
+<img src="img/logo.svg" alt="Logo Groupe PJV" width="80px" class="floatl">
+  <button class="hamburger">&#9776;</button>
+  <button class="cross">&#735;</button>
+</header>
+</div>
+
+<div class="menu">
+  <ul>
+    <p><img src="img/user.svg" width="60px" alt="">User name</p>
+    <p></p>
+    <p class="active">Tableau de bord</p>
+    <a href="#"><li>Liste des magasins</li></a>
+    <a href="#"><li>Produits</li></a>
+    <a href=""><li>Visite de magasin</li></a>
+    <a href=""><li>Effectuer une commande</li></a>
+    <a href=""><li>Support</li></a>
+  </ul>
+</div> 
+<script>$( ".cross" ).hide();
+$( ".menu" ).hide();
+$( ".hamburger" ).click(function() {
+$( ".menu" ).slideToggle( "slow", function() {
+$( ".hamburger" ).hide();
+$( ".cross" ).show();
+});
+});
+
+$( ".cross" ).click(function() {
+$( ".menu" ).slideToggle( "slow", function() {
+$( ".cross" ).hide();
+$( ".hamburger" ).show();
+});
+});</script>
+</body>
+</html>

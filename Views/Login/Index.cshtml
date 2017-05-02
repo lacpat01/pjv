@@ -1,0 +1,34 @@
+﻿@model groupePjvApp.ViewModels.RepresentantViewModel
+<!DOCTYPE html>
+<html lang="fr">
+@Html.Partial("../Shared/head")
+</head>
+<body id="login" data-overlay="7">
+
+    <div class="pre-loader"></div>
+    <div class="container">
+      @using (Html.BeginForm("Index", "Login", FormMethod.Post))
+      {
+        <div class="form-signin">
+                @Html.ValidationSummary()
+            <img class="valign2" src="~/Content/img/Logo_GroupePJV_renv_rouge.svg" width="300px">
+            <br><br>
+            <h3 class="form-signin-heading textWhite valign">Vous connecter</h3><br>
+            <p class="valign textWhite">
+                Veuillez entrer vos informations d'identification<br>
+                <br>
+                <br>
+                @Html.TextBoxFor(m => m.Representant.Courriel, new { @class = "input-block-level", type = "email", placeholder = "Courriel", name = "txtemail" })
+                <br>
+                @Html.PasswordFor(m => m.Representant.MotDePasse, new { @class = "input-block-level", type = "password", placeholder = "Mot de passe", name = "txtupass" })
+                <br><a class="valign textWhite" href="fpass.php">Mot de passe oublié? </a><br>
+                <br><br>
+                <button class="btn btn-large btn-pjv valign" type="submit" name="btn-login">Connexion</button><br>
+                <br><br>
+                <br>
+        </div>
+      }
+        </div>
+    
+</body>
+</html>

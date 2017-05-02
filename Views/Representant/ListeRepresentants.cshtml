@@ -1,0 +1,53 @@
+﻿@model groupePjvApp.ViewModels.ListeRepViewModel
+
+<!DOCTYPE html>
+<html>
+@Html.Partial("../Shared/head")
+</head>
+<body>
+    @Html.Partial("../Shared/menu")
+
+    <div class="container-fluid">
+        <div class="col-sm-9">
+            <div class="col-sm-12 space-empty"></div>
+            <div class="col-sm-11 col-sm-offset-1"><h1 class="fw6">Liste des représentants</h1></div>            
+            <div class="col-sm-12 space-empty"></div>
+            <div class="col-sm-11 col-sm-offset-1">
+                <table class="table">
+                    <thead>
+                        <tr class="tback">
+                            <th>Nom du représentant</th>
+                            <th>Adresse courriel</th>
+                            <th>Modifier</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var rep in Model.Representants)
+                        {
+                            var imgSrc = "";
+                            if (rep.Photo != null)
+                            {
+                                var base64 = Convert.ToBase64String(rep.Photo);
+                                imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                            }
+                            <tr>
+                                <td>@rep.Prenom @rep.Nom</td>
+                                <td>@rep.Courriel</td>
+                                <td><img src="@imgSrc" width="120px" alt="Super admin seulement"></td>
+                                <td><img src="~/Content/img/cogwheel.svg" width="35px" height="35px" alt="Super admin seulement"></td>
+                            </tr>
+                        }
+                        
+                       
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-sm-12 space-empty"></div>
+        </div>
+    </div>
+
+
+</body>
+</html>

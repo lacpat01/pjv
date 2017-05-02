@@ -1,0 +1,26 @@
+﻿@model groupePjvApp.Models.ItemCommande
+@using groupePjvApp.Models
+@{   
+    var produits = ViewData["produits"] != null ? ViewData["produits"] as List<Produit> : new List<Produit>();
+}
+<div class="col-sm-12">
+
+    <div class="col-sm-5">
+        @Html.DropDownListFor(x => x.Produit.Id, new System.Web.Mvc.SelectList(produits, "Id", "Code"), "Choisir un produit...", new { @class = "minimal", placeHolder = "Veuillez sélectionner un produits..." })
+        @if (!ViewData.ModelState.IsValid)
+        {
+            @Html.ValidationMessageFor(x => x.Produit.Id, null, new { @class = "erreur" })
+        }
+
+
+    </div>
+    <div class="col-sm-5">
+        @Html.TextBoxFor(x => x.Quantite, new { @class = "input-block-level", type = "number", placeholder = "Qty.", name = "qty" })
+        @if (!ViewData.ModelState.IsValid)
+        {
+            @Html.ValidationMessageFor(x => x.Quantite, null, new { @class = "erreur" })
+
+        }
+    </div><br>
+
+</div>

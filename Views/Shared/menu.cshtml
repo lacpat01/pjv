@@ -1,0 +1,96 @@
+﻿@using groupePjvApp.Models;
+@{
+            var rep = new Representant();
+            if (Session["representant"] != null)
+            {
+                rep = Session["representant"] as Representant;        
+            }
+   
+
+    var imgSrc = "";
+    if (rep.Photo != null)
+    {
+        var base64 = Convert.ToBase64String(rep.Photo);
+        imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+    }
+
+}
+<nav id="nav" class="visible-md visible-sm visible-xs hidden-lg hidden-xl">
+    <input type="checkbox" name="toggle" id="toggle" />
+    <label for="toggle"><img src="~/Content/img/Logo_GroupePJV_renv_rouge.svg" width="160px" class="hidden-sm hidden-xs pt8"><img class="right pt16" src="@imgSrc" width="120px"></label>
+    <div class="message">
+        <div class="col-sm-12 nopm">
+            <div class="profile-menu vertical-align">
+            </div>
+        </div>
+        <div class="col-sm-12 space-empty"></div>
+        <div class="col-sm-12 space-empty"></div>
+        <a href="@Url.Action("Tableau", "Accueil")"><div class="col-sm-6 col-sm-offset-4 span1 menu-tabs"><img src="~/Content/icons/tableauBlanc.svg" width="48px"><span class="span textWhite fw3 fs24 pl3 text-center">Tableau de bord</span></div></a>
+        <div class="col-sm-12 space-empty"></div>
+        <a href="@Url.Action("Liste", "Accueil")"><div class="col-sm-6 col-sm-offset-4 span1 menu-tabs"><img src="~/Content/icons/magasinBlanc.svg" width="48px"><span class="span pl3 textWhite fs24 fw3 text-center">Liste des magasins</span></div></a>
+        <div class="col-sm-12 space-empty"></div>
+        <a href="@Url.Action("Produits", "Produits")"><div class="col-sm-6 col-sm-offset-4 span1 menu-tabs"><img src="~/Content/icons/produitBlanc.svg" width="48px"><span class="span pl3 textWhite fs24 fw3 text-center">Produits</span></div></a>
+        <div class="col-sm-12 space-empty"></div>
+        <a href="@Url.Action("InfosVisite", "Visite")"><div class="col-sm-6 col-sm-offset-4 span1 menu-tabs"><img src="~/Content/icons/visiteNoir.svg" width="48px"><span class="span pl3 textGrisFoncee fs24 fw6 text-center">Visite de magasin</span></div></a>
+        <div class="col-sm-12 space-empty"></div>
+        <a href="@Url.Action("Commandes", "Commande")"><div class="col-sm-6 col-sm-offset-4 span1 menu-tabs"><img src="~/Content/icons/commandeBlanc.svg" width="48px"><span class="span pl3 textWhite fs24 fw3 text-center">Effectuer une commande</span></div></a>
+        <div class="col-sm-12 space-empty"></div>
+        <a href="@Url.Action("Appel", "Accueil")"><div class="col-sm-6 col-sm-offset-4 span1 menu-tabs"><img src="~/Content/icons/appelBlanc.svg" width="48px"><span class="span pl3 textWhite fs24 fw3 text-center">Appel reçu</span></div></a>
+        <div class="col-sm-12 space-empty"></div>
+        <a href="@Url.Action("Support", "Accueil")"><div class="col-sm-6 col-sm-offset-4 span1 menu-tabs"><img src="~/Content/icons/icons/supportBlanc.svg" width="48px"><span class="span pl3 textWhite fs24 fw3 text-center">Support</span></div></a>
+        <div class="col-sm-12 space-empty"></div>
+        <div class="col-sm-12 space-empty"></div>
+        <a href="UNSUB"><div class="col-sm-6 col-sm-offset-4 span1 menu-tabs"><span class="span pl3 textWhite fs24 fw7 text-center">Se déconnecter</span></div></a>
+        <div class="col-sm-12 space-empty"></div>
+        <div class="col-sm-12 space-empty"></div>
+
+    </div>
+</nav>
+
+<!-- End responsive nav -->
+
+
+<div class="stickyNav hidden-md hidden-sm hidden-xs">
+    <div class="col-lg-2"><img src="~/Content/img/Logo_GroupePJV_renv_rouge.svg" class="logoPJV" alt="Logo Groupe PJV"></div>
+    <div class="col-lg-7"></div>
+    <div class="col-lg-2">
+       
+    </div>
+    <div class="col-lg-1"><img src="@imgSrc" class="userInfos" alt=""></div>
+</div>
+        
+  </header>
+
+
+<div class="col-lg-4 sideNav hidden-md hidden-sm hidden-xs">
+    <div class="col-lg-12 dummySpace"></div>
+    <a href="@Url.Action("Tableau", "Accueil")"><div class="col-lg-12"><div class="col-lg-1"><img class="mt1" src="~/Content/icons/tableauBlanc.svg" width="30px"></div><h4 class="val fs16 fw3 navText">Tableau de bord</h4></div></a>
+    <div class="col-lg-12 space-empty"></div>
+    <a href="@Url.Action("Liste", "Accueil")"><div class="col-lg-12"><div class="col-lg-1"><img class="mt1" src="~/Content/icons/magasinBlanc.svg" width="30px"></div><h4 class="val fs16 fw3 navText">Liste des magasins</h4></div></a>
+    <div class="col-lg-12 space-empty"></div>
+    <a href="@Url.Action("Produits", "Produits")"><div class="col-lg-12"><div class="col-lg-1"><img class="mt1" src="~/Content/icons/produitBlanc.svg" width="30px"></div><h4 class="val fs16 fw3 navText">Produits</h4></div></a>
+    <div class="col-lg-12 space-empty"></div>
+    <a href="@Url.Action("InfosVisite", "Visite")"><div class="col-lg-12"><div class="col-lg-1"><img class="mt1" src="~/Content/icons/visiteNoir.svg" width="30px"></div><h4 class="val fs16 fw6 navTextActive">Visite de magasin</h4></div></a>
+    <div class="col-lg-12 space-empty"></div>
+    <a href="@Url.Action("Commandes", "Commande")"><div class="col-lg-12"><div class="col-lg-1"><img class="mt1" src="~/Content/icons/commandeBlanc.svg" width="30px"></div><h4 class="val fs16 fw3 navText">Commander</h4></div></a>
+    <div class="col-lg-12 space-empty"></div>
+    <a href="@Url.Action("Appel", "Accueil")"><div class="col-lg-12"><div class="col-lg-1"><img class="mt1" src="~/Content/icons/appelBlanc.svg" width="30px"></div><h4 class="val fs16 fw3 navText">Appel reçu</h4></div></a>
+    <div class="col-lg-12 space-empty"></div>
+    <a href="@Url.Action("Support", "Accueil")"><div class="col-lg-12"><div class="col-lg-1"><img class="mt1" src="~/Content/icons/supportBlanc.svg" width="30px"></div><h4 class="val fs16 fw3 navText">Support</h4></div></a>
+</div>
+    <script>
+     $( document ).ready(function() {
+
+        $('.btn-filter').on('click', function () {
+          var $target = $(this).data('target');
+          if ($target != 'all') {
+            $('.produit').css('display', 'none');
+            $('.produit[data-filter=".' + $target + '"]').fadeIn('slow');
+          } else {
+            $('.produit').css('display', 'none').fadeIn('slow');
+          }
+        });
+    });
+    </script> 
+
+	

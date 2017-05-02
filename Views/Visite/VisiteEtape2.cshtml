@@ -1,0 +1,105 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+@Html.Partial("../Shared/head")
+</head>
+<body>
+   @Html.Partial("../Shared/menu")
+    <div class="container-fluid">
+        <div class="col-sm-9">
+            <div class="col-sm-12 space-empty"></div>
+            <div class="col-sm-11 col-sm-offset-1"><h1 class="fw6">Visite de magasin</h1></div>
+            <div class="col-sm-11 col-sm-offset-1"><p>Remplissez les champs ci-dessous pour générer un rapport de votre visite de magasin</p></div>
+
+            <!-- Timeline -->
+
+            <div class="col-sm-11 col-sm-offset-1">
+                <ul class="timeline" id="timeline">
+                    <li class="li complete col-sm-2">
+
+                        <div class="status">
+
+                        </div>
+                    </li>
+                    <li class="li complete">
+
+                        <div class="status col-sm-2">
+
+                        </div>
+                    </li>
+                    <li class="li">
+
+                        <div class="status col-sm-2">
+
+                        </div>
+                    </li>
+                    <li class="li">
+
+                        <div class="status col-sm-2">
+
+                        </div>
+                    </li>
+                    <li class="li">
+
+                        <div class="status col-sm-2">
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- End Timeline -->
+
+            <div class="col-sm-11 col-sm-offset-1"><h1>Étape 2 - Photos</h1></div>
+            <div class="col-sm-11 col-sm-offset-1"><p>Prenez 5 photos à l’aide de votre appareil dans les endroits mentionnés</p></div>
+
+
+            <div class="col-sm-12 space-empty"></div>
+
+
+            <div class="col-sm-11 col-sm-offset-1">
+
+                <div class="col-sm-2 dashboardIconContainer">
+                    <input type="file" style="display:none;" name="file" id="file" class="inputfile" accept="image/*" />
+                    <label for="file">
+                    </label><div class="col-sm-12 space-empty-small"></div><div class="col-sm-2 mt2 icons"><img src="~/Content/icons/photoNoir.svg" width="100px"></div><div class="col-sm-12 space-empty-small"></div><p class="col-sm-12 text-center dashboardTitleTextCards fw4">Stationnement</p></label>
+                </div>
+
+                <div class="col-sm-2 dashboardIconContainer dashboardIconSpaceContainer">
+                    <input type="file" style="display:none;" name="file" id="file2" class="inputfile" accept="image/*" />
+                    <label for="file">
+                    </label><div class="col-sm-12 space-empty-small"></div><div class="col-sm-2 mt2 icons"><img src="~/Content/icons/photoNoir.svg" width="100px"></div><div class="col-sm-12 space-empty-small"></div><p class="col-sm-12 text-center dashboardTitleTextCards fw4">Entrepôt</p></label>
+                </div>
+
+                <div class="col-sm-2 dashboardIconContainer dashboardIconSpaceContainer">
+                    <input type="file" style="display:none;" name="file" id="file3" class="inputfile" accept="image/*" />
+                    <label for="file">
+                    </label><div class="col-sm-12 space-empty-small"></div><div class="col-sm-2 mt2 icons"><img src="~/Content/icons/photoNoir.svg" width="100px"></div><div class="col-sm-12 space-empty-small"></div><p class="col-sm-12 text-center dashboardTitleTextCards fw4">Caisses</p></label>
+                </div>
+
+                <div class="col-sm-2 dashboardIconContainer dashboardIconSpaceContainer">
+                    <input type="file" style="display:none;" name="file" id="file4" class="inputfile" accept="image/*" />
+                    <label for="file">
+                    </label><div class="col-sm-12 space-empty-small"></div><div class="col-sm-2 mt2 icons"><img src="~/Content/icons/photoNoir.svg" width="100px"></div><div class="col-sm-12 space-empty-small"></div><p class="col-sm-12 text-center dashboardTitleTextCards fw4">Étagères</p></label>
+                </div>
+
+                <div class="col-sm-12 space-empty"></div>
+
+                <div class="col-sm-2 dashboardIconContainer">
+                    <input type="file" style="display:none;" name="file" id="file5" class="inputfile" accept="image/*" />
+                    <label for="file">
+                    </label><div class="col-sm-12 space-empty-small"></div><div class="col-sm-2 mt2 icons"><img src="~/Content/icons/photoNoir.svg" width="100px"></div><div class="col-sm-12 space-empty-small"></div><p class="col-sm-12 text-center dashboardTitleTextCards fw4">Salle de bain</p></label>
+                </div>
+            </div>
+
+            <div class="col-sm-12 space-empty"></div>
+            <div class="col-sm-11 col-sm-offset-1">
+                <div class="col-sm-9">
+                    <br>
+                    <a href="@Url.Action("VisiteEtape3", "Visite")"><button class="btn btnBottom btn-lg btnRouge btn-responsive" type="submit" name="btn-login">Prochaine étape</button></a><br>
+                </div> <!-- End col-md-12 bouton-->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

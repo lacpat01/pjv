@@ -1,0 +1,82 @@
+﻿@model groupePjvApp.ViewModels.CommandesViewModel
+<!doctype html>
+<html>
+@Html.Partial("../Shared/head")
+</head>
+<body>
+   @Html.Partial("../Shared/menu")
+
+
+    <div class="container-fluid">
+        <div class="col-sm-8">
+            @Html.ValidationSummary()
+        </div>
+        <div class="col-sm-9">
+            
+            <div class="col-sm-12 space-empty"></div>
+            <div class="col-sm-11 col-sm-offset-1"><h1 class="fw6">Commander</h1></div>
+            <div class="col-sm-11 col-sm-offset-1"><p>Veuillez inscrire le numéro du produit ainsi que le nombre désiré</p></div>
+            
+
+
+            <div class="col-sm-12 space-empty"></div>
+            <div class="col-sm-11 col-sm-offset-1">
+
+                
+
+                @using (Html.BeginForm("ConfirmerCommande", "Commande", FormMethod.Post))
+            {
+                    @*<p class="textGrisFoncee">
+                        Date :
+                        <script>
+						var tD = new Date();
+						var datestr = tD.getDate() + "/" + (tD.getMonth()+ 1) + "/" + tD.getFullYear();
+						document.write("<input type='text' name='textField' value='" + datestr + "'>");
+                        </script>
+
+                    </p>*@
+
+                    <div class="col-sm-12 space-empty"></div>
+
+                    <div class="col-sm-6">
+                        @Html.DropDownListFor(x => x.Commande.Magasin.Id, new System.Web.Mvc.SelectList(Model.Magasins, "Id", "Succursale"), "Choisir une succursale...", new { @class = "minimal" })
+                        
+            @Html.ValidationMessageFor(x => x.Commande.ProduitsCommande[i].Quantite, null, new { @class = "erreur" })
+                    </div>
+
+
+                    for (int i = 0; i < 2; i++)
+                    {
+
+                        <div class="col-sm-12 space-empty"></div>
+
+                            <div class="col-sm-12">
+
+                                <div class="col-sm-5">
+                                    @Html.DropDownListFor(x => x.Commande.ProduitsCommande[i].Id, new System.Web.Mvc.SelectList(Model.Produits, "Id", "Code"), "Choisir un produit...", new { @class = "minimal", placeHolder = "Veuillez sélectionner un produits..." })
+                                    @Html.ValidationMessageFor(x => x.Commande.ProduitsCommande[i].Quantite, null, new { @class = "erreur" })
+                                </div>
+                                <div class="col-sm-5">
+                                    @Html.TextBoxFor(x => x.Commande.ProduitsCommande[i].Quantite, new { @class = "input-block-level", type = "number", placeholder = "Qty.", name = "qty" })
+                                    
+
+                                </div><br>
+
+                            </div>
+
+                    }
+                    <div class="col-sm-12 space-empty"></div>
+
+                    <div class="col-sm-9">
+                        <br>
+                        <button class="btn btnBottom btn-lg btnRouge btn-responsive" type="submit" name="btn-commande">Prochaine étape</button><br>
+                    </div> <!-- End col-md-12 bouton-->
+
+                }
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,54 @@
+﻿@model groupePjvApp.ViewModels.MagasinsViewModel
+
+<!doctype html>
+<html>
+@Html.Partial("../Shared/head")
+
+</head>
+@Html.Partial("../Shared/menu")
+
+<body>
+    <div class="container-fluid">
+        <div class="col-sm-9">
+            <div class="col-sm-12 space-empty"></div>
+            <div class="col-sm-11 col-sm-offset-1"><h1 class="fw6">Liste des magasins</h1></div>
+            <div class="col-sm-11 col-sm-offset-1"><p>Visionez la liste complète des magasins</p></div>
+            <div class="col-sm-12 space-empty"></div>
+            <div class="col-sm-11 col-sm-offset-1">
+                <table class="table">
+                    <thead>
+                        <tr class="tback">
+                            <th>Fiche</th>
+                            <th>Succursale</th>
+                            <th>Numéro <img src="~/Content/img/sort-arrows-couple-pointing-up-and-down.svg" height="10px" alt="Ordre croissant"></th>
+                            <th>Région</th>
+                            <th>Adresse</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var magasin in Model.Magasins)
+                        {
+                            <tr>
+                                <td><img src="~/Content/img/file.svg" width="25px" alt=""></td>
+                                <td>@magasin.Succursale</td>
+                                <td>@magasin.Numero</td>
+                                <td>@magasin.Region</td>
+                                <td>@magasin.Adresse</td>
+                                <td><img src="~/Content/img/pdf.svg" width="25px" alt="Voir la fiche client">&nbsp;&nbsp;<img src="~/img/cogwheel.svg" width="25px" alt="Super admin seulement"></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-sm-12 space-empty"></div>
+
+        </div>
+    </div>
+    
+</body>
+</html>
+
+
+

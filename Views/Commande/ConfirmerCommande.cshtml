@@ -1,0 +1,57 @@
+﻿@model groupePjvApp.ViewModels.CommandesViewModel
+@using groupePjvApp.Models
+@{
+    var magasins = ViewData["magasins"] != null ? ViewData["magasins"] as List<Magasin> : new List<Magasin>();
+    var produits = ViewData["produits"] != null ? ViewData["produits"] as List<Produit> : new List<Produit>();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    @Html.Partial("../Shared/head")
+</head>
+<body>
+   @Html.Partial("../Shared/menu")
+    <div class="container-fluid">
+        <div class="col-sm-9">
+            <div class="col-sm-12 space-empty"></div>
+            <div class="col-sm-11 col-sm-offset-1"><h1 class="fw6">Commander</h1></div>
+            <div class="col-sm-11 col-sm-offset-1"><p>Veuillez vérifier si toutes les informations sont bonnes avant d’envoyer votre commande</p></div>
+
+
+            <div class="col-sm-12 space-empty"></div>
+
+
+            <div class="col-sm-11 col-sm-offset-1">
+
+                <div class="col-sm-12">
+
+                    <div class="col-md-4 recapVisiteBGConfirm">
+                        <div class="col-sm-12">
+                            <div class="col-sm-12 space-empty-small"></div>
+                            <p class="fw3 textGrisPale fw3">Date :  <span class="textGrisPale fw6">@Model.Commande.DateCommande</span></p>
+                            <div class="col-sm-12 space-empty-small2"></div>
+                            <p class="fw3 textGrisPale fw3">Magasin : <span class="textGrisPale fw6">@Model.Commande.Magasin.Succursale</span></p>
+                            <div class="col-sm-12 space-empty-small2"></div>
+                            <p class="fw3 textGrisPale fw3">Produits :</p>
+                            <div class="col-sm-12 space-empty-small2"></div>
+                            @for (int i = 0; i < Model.Commande.Produits.Count(); i++)
+                            {
+                                <p class="fw3 textGrisPale fw6">@i <span class="textGrisPale fw6">@Model.Commande.Produits[i].Code</span> <span class="textGrisPale fw6">Qté : @Model.Commande.Produits[i].Qty</span></p>
+                                <div class="col-sm-12 space-empty-small2"></div>
+                            }
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 space-empty"></div>
+            </div>
+        <div class="col-sm-12 space-empty"></div>
+            <div class="col-sm-11 col-sm-offset-1">
+                <div class="col-sm-9">
+                    <br>
+                    <a href="#"><button class="btn btnBottom btn-lg btnRouge btn-responsive" type="submit" name="btn-login">Envoyer la commande</button></a><br>
+                </div> <!-- End col-md-12 bouton-->
+            </div></div>
+    </div>
+</body>
+</html>
